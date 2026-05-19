@@ -1,66 +1,57 @@
-import Image from "next/image";
+"use client";
 import styles from "./page.module.css";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, RandomizedLight, Stars } from "@react-three/drei";
+import Ocean from "./scene/ocean/Ocean";
+import Sky from "./scene/sky/Sky";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className={styles.mainScene}>
+      <Canvas
+        dpr={[1, 2]}
+        gl={{
+          powerPreference: "high-performance",
+          alpha: true,
+        }}
+        camera={{ position: [0, 2, 16], fov: 50 }}
+      >
+        <OrbitControls
+          enablePan={false}
+          minPolarAngle={Math.PI * 0.1}
+          maxPolarAngle={Math.PI * 0.55}
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        <directionalLight
+          position={[30, 50, -20]}
+          intensity={3}
+          castShadow
+          shadow-mapSize={[2048, 2048]}
+        />
+
+        <ambientLight intensity={0.15} />
+        <RandomizedLight
+          castShadow
+          amount={8}
+          frames={100}
+          position={[5, 5, -10]}
+        />
+        <Sky />
+        <Ocean />
+        <Stars
+          radius={100}
+          depth={50}
+          count={5000}
+          factor={4}
+          saturation={0.5}
+          fade
+          speed={1}
+        />
+
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
+          <planeGeometry args={[3000, 3000]} />
+          <meshStandardMaterial color={"#2b4b7f"} />
+        </mesh>
+      </Canvas>
     </div>
   );
 }
