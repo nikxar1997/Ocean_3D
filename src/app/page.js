@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, RandomizedLight, Stars } from "@react-three/drei";
 import Ocean from "./scene/ocean/Ocean";
 import Sky from "./scene/sky/Sky";
-
+//d
 export default function Home() {
   return (
     <div className={styles.mainScene}>
