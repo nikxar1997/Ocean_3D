@@ -3,8 +3,8 @@ self.__BUILD_MANIFEST = {
     "afterFiles": [],
     "beforeFiles": [
       {
-        "source": "/ocean_3d//_next/:path+",
-        "destination": "/ocean_3d/_next/:path+"
+        "source": "/ocean-scene//_next/:path+",
+        "destination": "/ocean-scene/_next/:path+"
       }
     ],
     "fallback": []
