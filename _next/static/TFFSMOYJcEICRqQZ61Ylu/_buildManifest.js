@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/Ocean_3D//_next/:path+",
+        "destination": "/Ocean_3D/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
