@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[97889,["/Ocean_3D/_next/static/chunks/0vbdp00x_y65z.js"],"default"]
-3:I[8801,["/Ocean_3D/_next/static/chunks/0vbdp00x_y65z.js"],"default"]
+2:I[97889,["/ocean_3d/_next/static/chunks/0vbdp00x_y65z.js"],"default"]
+3:I[8801,["/ocean_3d/_next/static/chunks/0vbdp00x_y65z.js"],"default"]
 4:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"IwI1riWeUK47D3KoHEwX5"}
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"aN_1qGS5BpskJkkzjweh7"}
